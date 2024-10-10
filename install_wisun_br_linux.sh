@@ -23,6 +23,16 @@ fi
 
 cd ~/wisun-br-linux/ || exit
 
+if [ -d "CMakeFiles" ]; then
+    echo "Removing CMakeFiles directory..."
+    rm -rf CMakeFiles/
+fi
+
+if [ -f "CMakeCache.txt" ]; then
+    echo "Removing CMakeCache.txt file..."
+    rm -rf CMakeCache.txt
+fi
+
 echo "Generating build files with CMake..."
 cmake -G Ninja . || exit
 
