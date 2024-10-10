@@ -14,7 +14,7 @@ error_exit() {
 
 trap 'error_exit $LINENO "$BASH_COMMAND"' ERR
 
-cd ~ || exit
+cd ~/Workswith_WiSUN || exit
 
 if [ ! -d "mbedtls" ]; then
     echo "Cloning Mbed TLS version $MBEDTLS_VERSION"
@@ -23,7 +23,7 @@ else
     echo "Mbed TLS directory already exists. Skipping clone."
 fi
 
-cd ~/mbedtls/ || exit
+cd ~/Workswith_WiSUN/mbedtls/ || exit
 
 echo "Generating build files with CMake..."
 cmake -G Ninja . || exit
