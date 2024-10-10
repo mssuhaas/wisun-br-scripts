@@ -10,6 +10,7 @@ This repository contains a set of installation scripts to set up required depend
 - `install_cpc_daemon.sh`: Installs the CPC Daemon.
 - `install_wisun_br_linux.sh`: Installs the Wi-SUN BR Linux implementation.
 - `install_wisun_br_gui.sh`: Installs the Wi-SUN BR GUI.
+- `install_cpcd_v5.sh` : Installs CPCD.
 
 ## Installation Steps
 
@@ -32,6 +33,7 @@ This repository contains a set of installation scripts to set up required depend
    sudo ./install_cpc_daemon.sh
    sudo ./install_wisun_br_linux.sh
    sudo ./install_wisun_br_gui.sh
+   sudo ./install_cpcd_v5.sh
    ```
 
 
