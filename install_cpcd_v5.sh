@@ -12,7 +12,7 @@ error_exit() {
 
 trap 'error_exit $LINENO "$BASH_COMMAND"' ERR
 
-cd ~/Workswith_WiSUN || exit
+cd /home/raspberrypi/Workswith_WiSUN || exit
 
 if [ -d "/usr/local/lib/arm-linux-gnueabihf/" ]; then
     echo "Removing previous libcpc installs..."
@@ -28,7 +28,7 @@ else
     echo "cpc_daemon_stash directory already exists. Skipping clone."
 fi
 
-cd ~/Workswith_WiSUN/cpc_daemon_stash/ || exit
+cd /home/raspberrypi/Workswith_WiSUN/cpc_daemon_stash/ || exit
 
 if [ -d "build" ]; then
     echo "Removing existing build directory..."
@@ -51,7 +51,7 @@ sudo make install || exit
 echo "Running ldconfig..."
 sudo ldconfig || exit
 
-CPC_VERSION=$(grep 'set(CPC_PROTOCOL_VERSION' ~/Workswith_WiSUN/cpc_daemon_stash/CMakeLists.txt | awk -F\" '{print $2}')
+CPC_VERSION=$(grep 'set(CPC_PROTOCOL_VERSION' /home/raspberrypi/Workswith_WiSUN/cpc_daemon_stash/CMakeLists.txt | awk -F\" '{print $2}')
 echo "CPC Protocol Version: $CPC_VERSION"
 
 echo "Verifying libcpc installation..."

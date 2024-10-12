@@ -12,7 +12,7 @@ error_exit() {
 
 trap 'error_exit $LINENO "$BASH_COMMAND"' ERR
 
-cd ~/Workswith_WiSUN || exit
+cd /home/raspberrypi/Workswith_WiSUN || exit
 
 if [ ! -d "wisun-br-linux" ]; then
     echo "Cloning wisun-br-linux..."
@@ -21,7 +21,7 @@ else
     echo "wisun-br-linux directory already exists. Skipping clone."
 fi
 
-cd ~/Workswith_WiSUN/wisun-br-linux/ || exit
+cd /home/raspberrypi/Workswith_WiSUN/wisun-br-linux/ || exit
 
 if [ -d "CMakeFiles" ]; then
     echo "Removing CMakeFiles directory..."

@@ -2,8 +2,6 @@
 
 set -e
 
-MBEDTLS_VERSION="v3.0.0"
-
 PREV_DIR=$(pwd)
 
 error_exit() {
@@ -14,16 +12,16 @@ error_exit() {
 
 trap 'error_exit $LINENO "$BASH_COMMAND"' ERR
 
-cd ~/Workswith_WiSUN || exit
+cd home/raspberrypi/Workswith_WiSUN || exit
 
 if [ ! -d "mbedtls" ]; then
-    echo "Cloning Mbed TLS version $MBEDTLS_VERSION"
-    git clone --branch=$MBEDTLS_VERSION https://github.com/ARMmbed/mbedtls.git
+    echo "Cloning Mbed TLS version v3.0.0"
+    git clone --branch=v3.0.0 https://github.com/ARMmbed/mbedtls.git
 else
     echo "Mbed TLS directory already exists. Skipping clone."
 fi
 
-cd ~/Workswith_WiSUN/mbedtls/ || exit
+cd /home/raspberrypi/Workswith_WiSUN/mbedtls/ || exit
 
 echo "Generating build files with CMake..."
 cmake -G Ninja . || exit
