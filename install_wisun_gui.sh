@@ -31,12 +31,12 @@ sudo apt update
 
 sudo apt install -t ${VERSION_CODENAME}-backports cockpit -y
 
-cd /home/raspberrypi/Workswith_WiSUN
+cd $HOME/Workswith_WiSUN
 if [ ! -d "wisun-br-gui" ]; then
     git clone https://github.com/SiliconLabs/wisun-br-gui
 fi
 
-cd /home/raspberrypi/Workswith_WiSUN/wisun-br-gui
+cd $HOME/Workswith_WiSUN/wisun-br-gui
 
 make
 sudo make install

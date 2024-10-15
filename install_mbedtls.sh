@@ -12,7 +12,7 @@ error_exit() {
 
 trap 'error_exit $LINENO "$BASH_COMMAND"' ERR
 
-cd home/raspberrypi/Workswith_WiSUN || exit
+cd $HOME/Workswith_WiSUN || exit
 
 if [ ! -d "mbedtls" ]; then
     echo "Cloning Mbed TLS version v3.0.0"
@@ -21,7 +21,7 @@ else
     echo "Mbed TLS directory already exists. Skipping clone."
 fi
 
-cd /home/raspberrypi/Workswith_WiSUN/mbedtls/ || exit
+cd $HOME/Workswith_WiSUN/mbedtls/ || exit
 
 echo "Generating build files with CMake..."
 cmake -G Ninja . || exit

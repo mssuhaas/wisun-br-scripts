@@ -12,7 +12,7 @@ error_exit() {
 
 trap 'error_exit $LINENO "$BASH_COMMAND"' ERR
 
-cd /home/raspberrypi/Workswith_WiSUN || exit
+cd $HOME/Workswith_WiSUN || exit
 
 if [ ! -d "cpc_daemon" ]; then
     echo "Cloning cpc_daemon..."
@@ -21,7 +21,7 @@ else
     echo "cpc_daemon directory already exists. Skipping clone."
 fi
 
-cd /home/raspberrypi/Workswith_WiSUN/cpc_daemon || exit
+cd $HOME/Workswith_WiSUN/cpc_daemon || exit
 
 echo "Generating build files with CMake..."
 cmake -S . -B build -G Ninja || exit
@@ -37,4 +37,4 @@ sudo ldconfig || exit
 
 cd "$PREV_DIR" || exit
 
-echo "cpc_daemon installation complete. Returned to $PREV_DIR."
+echo "cpc_daemon installation complete. Returned to $PREV_DIR."`
